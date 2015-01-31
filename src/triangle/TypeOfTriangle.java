@@ -42,7 +42,13 @@ public class TypeOfTriangle {
 	private void CalculateTriangleType()
 	{
 		
-		if( ( m_iSideA == m_iSideB ) || 
+		if( (m_iSideA == m_iSideB) &&
+			(m_iSideB == m_iSideC))
+		{
+			m_ttTriangleType = TriangleTypes.EQUILATERAL;
+			return;
+		}
+		else if( ( m_iSideA == m_iSideB ) || 
 			( m_iSideA == m_iSideC ) ||	
 			( m_iSideB == m_iSideC ) )
 		{
@@ -51,7 +57,7 @@ public class TypeOfTriangle {
 		}
 		else
 		{
-			
+			m_ttTriangleType = TriangleTypes.SCALENE;
 		}
 		
 	}
