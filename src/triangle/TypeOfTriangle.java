@@ -58,15 +58,17 @@ public class TypeOfTriangle {
 	
 	private void CalculateRightAngle()
 	{
-		double a_sqrt = Math.sqrt( m_iSideA );
-		double b_sqrt = Math.sqrt( m_iSideB );
-		double c_sqrt = Math.sqrt( m_iSideC );
+		double a_sqrt = Math.pow( m_iSideA, 2 );
+		double b_sqrt = Math.pow( m_iSideB, 2 );
+		double c_sqrt = Math.pow( m_iSideC, 2 );
 		
 		if( c_sqrt == ( a_sqrt + b_sqrt ) )
 		{
 			m_bIsRight = true;
 		}
-		
-		m_bIsRight =  false;
+		else 
+		{
+			m_bIsRight =  false;
+		}
 	}
 }
