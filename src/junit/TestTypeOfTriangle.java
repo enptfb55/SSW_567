@@ -19,6 +19,28 @@ public class TestTypeOfTriangle {
 		assertEquals( TriangleTypes.ISOSCELES, triangle.GetTypeOfTriangle() );
 		
 	}
+
+	@Test
+	public void TestEquilateral()
+	{
+		TypeOfTriangle triangle = new TypeOfTriangle(4, 4, 4);
+		
+		assertFalse( triangle.IsRight() );
+		
+		assertEquals( TriangleTypes.EQUILATERAL, triangle.GetTypeOfTriangle() );
+		
+	}
+
+	@Test
+	public void TestScalene()
+	{
+		TypeOfTriangle triangle = new TypeOfTriangle(3, 4, 5);
+		
+		assertTrue( triangle.IsRight() );
+		
+		assertEquals( TriangleTypes.SCALENE, triangle.GetTypeOfTriangle() );
+		
+	}
 	
 	@Test
 	public void TestRightAngle()
