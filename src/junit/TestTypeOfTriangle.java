@@ -45,7 +45,7 @@ public class TestTypeOfTriangle {
 	@Test
 	public void TestIsosceles()
 	{
-		TypeOfTriangle triangle = new TypeOfTriangle(1, 1, 2);
+		TypeOfTriangle triangle = new TypeOfTriangle( 4.7, 4.7, 4 );
 		
 		assertFalse( triangle.IsRight() );
 		
@@ -156,6 +156,6 @@ public class TestTypeOfTriangle {
 		// '$' has an integer value of 36
 		TypeOfTriangle triangle = new TypeOfTriangle('a', 4, '$');
 		
-		assertEquals( TriangleTypes.SCALENE, triangle.GetTypeOfTriangle());
+		assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
 	}
 }
