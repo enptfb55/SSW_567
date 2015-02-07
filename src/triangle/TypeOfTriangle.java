@@ -67,7 +67,7 @@ public class TypeOfTriangle {
 			m_ttTriangleType = TriangleTypes.NONE;
 			return;
 		}
-		else if (m_dSideA <= (m_dSideB + m_dSideC) )
+		else if ( m_dSideA > ( m_dSideB + m_dSideC ) )
 		{
 			m_ttTriangleType = TriangleTypes.NONE;
 			return;
