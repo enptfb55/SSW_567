@@ -10,6 +10,22 @@ import triangle.TypeOfTriangle.TriangleTypes;
 public class TestTypeOfTriangle {
 
 	@Test
+	public void TestZeroValue()
+	{
+	    TypeOfTriangle triangle = new TypeOfTriangle(3, 4, 0);
+
+	    assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+	}
+
+	@Test
+	public void TestNegativeValue()
+	{
+	    TypeOfTriangle triangle = new TypeOfTriangle(3, 4, -5);
+
+	    assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+	}
+	
+	@Test
 	public void TestIsosceles()
 	{
 		TypeOfTriangle triangle = new TypeOfTriangle(1, 1, 2);

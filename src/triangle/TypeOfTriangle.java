@@ -60,7 +60,14 @@ public class TypeOfTriangle {
 	private void CalculateTriangleType()
 	{
 		
-		if( (m_iSideA == m_iSideB) &&
+		if( ( m_iSideA <= 0 ) || 
+				 ( m_iSideB <= 0 ) ||	
+				 ( m_iSideC <= 0 ) )
+		{
+			m_ttTriangleType = TriangleTypes.NONE;
+			return;
+		}
+		else if( (m_iSideA == m_iSideB) &&
 			(m_iSideB == m_iSideC))
 		{
 			m_ttTriangleType = TriangleTypes.EQUILATERAL;
