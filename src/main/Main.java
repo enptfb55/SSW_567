@@ -25,14 +25,14 @@ public class Main {
 		
 		String sSideC = scan.next();
 		
-		int iSideA = Integer.parseInt( sSideA );
-		int iSideB = Integer.parseInt( sSideB );
-		int iSideC = Integer.parseInt( sSideC );
+		double dSideA = Double.parseDouble( sSideA );
+		double dSideB = Double.parseDouble( sSideB );
+		double dSideC = Double.parseDouble( sSideC );
 		
-		TypeOfTriangle triangle = new TypeOfTriangle( iSideA, iSideB, iSideC );
+		TypeOfTriangle triangle = new TypeOfTriangle( dSideA, dSideB, dSideC );
 		
 		System.out.println( "Your triangle is " + 
-							( triangle.IsRight() ? "" : "not" ) + 
+							( triangle.IsRight() ? "" : "not " ) + 
 							"a right angle triangle and is " + 
 							triangle.GetTypeOfTriangleAsString() );	
 		
