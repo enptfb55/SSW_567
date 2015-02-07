@@ -11,19 +11,19 @@ public class TypeOfTriangle {
 		EQUILATERAL
 	}
 	
-	private int m_iSideA = 0;
-	private int m_iSideB = 0;
-	private int m_iSideC = 0;
+	private double m_dSideA = 0;
+	private double m_dSideB = 0;
+	private double m_dSideC = 0;
 	
 	private boolean m_bIsRight = false;
 	
 	private TriangleTypes m_ttTriangleType = TriangleTypes.NONE;
 	
-	public TypeOfTriangle( int a, int b, int c )
+	public TypeOfTriangle( double a, double b, double c )
 	{
-		m_iSideA = a;
-		m_iSideB = b;
-		m_iSideC = c;
+		m_dSideA = a;
+		m_dSideB = b;
+		m_dSideC = c;
 		
 		CalculateTriangleType();
 		CalculateRightAngle();
@@ -60,22 +60,27 @@ public class TypeOfTriangle {
 	private void CalculateTriangleType()
 	{
 		
-		if( ( m_iSideA <= 0 ) || 
-				 ( m_iSideB <= 0 ) ||	
-				 ( m_iSideC <= 0 ) )
+		if( ( m_dSideA <= 0 ) || 
+				 ( m_dSideB <= 0 ) ||	
+				 ( m_dSideC <= 0 ) )
 		{
 			m_ttTriangleType = TriangleTypes.NONE;
 			return;
 		}
-		else if( (m_iSideA == m_iSideB) &&
-			(m_iSideB == m_iSideC))
+		else if (m_dSideA <= (m_dSideB + m_dSideC) )
+		{
+			m_ttTriangleType = TriangleTypes.NONE;
+			return;
+		}
+		else if( (m_dSideA == m_dSideB) &&
+			(m_dSideB == m_dSideC))
 		{
 			m_ttTriangleType = TriangleTypes.EQUILATERAL;
 			return;
 		}
-		else if( ( m_iSideA == m_iSideB ) || 
-				 ( m_iSideA == m_iSideC ) ||	
-				 ( m_iSideB == m_iSideC ) )
+		else if( ( m_dSideA == m_dSideB ) || 
+				 ( m_dSideA == m_dSideC ) ||	
+				 ( m_dSideB == m_dSideC ) )
 		{
 			m_ttTriangleType = TriangleTypes.ISOSCELES;
 			return;
@@ -89,9 +94,9 @@ public class TypeOfTriangle {
 	
 	private void CalculateRightAngle()
 	{
-		double a_sqrt = Math.pow( m_iSideA, 2 );
-		double b_sqrt = Math.pow( m_iSideB, 2 );
-		double c_sqrt = Math.pow( m_iSideC, 2 );
+		double a_sqrt = Math.pow( m_dSideA, 2 );
+		double b_sqrt = Math.pow( m_dSideB, 2 );
+		double c_sqrt = Math.pow( m_dSideC, 2 );
 		
 		if( c_sqrt == ( a_sqrt + b_sqrt ) )
 		{

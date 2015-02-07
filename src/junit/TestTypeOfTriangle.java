@@ -28,14 +28,16 @@ public class TestTypeOfTriangle {
 	@Test //Assignment 2 Test
 	public void TestNoValue()
 	{
-		TypeOfTriangle triangle = new TypeOfTriangle(3, 4);
-		//Code Needed
+		// this will not compile
+		// TypeOfTriangle triangle = new TypeOfTriangle(3, 4, );
+		
+		// assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
 	}
 	
 	@Test //Assignment 2 Test
 	public void TestLargeValue()
 	{
-	    TypeOfTriangle triangle = new TypeOfTriangle(3, 4, 2147483647);
+	    TypeOfTriangle triangle = new TypeOfTriangle(3, 4, ( 2147483647 + 1 ) );
 
 	    assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
 	}
@@ -109,8 +111,12 @@ public class TestTypeOfTriangle {
 	@Test
 	public void Test3()
 	{
-		TypeOfTriangle triangle = new TypeOfTriangle(5, 6, A);
-		//Code Needed
+		// technically this is valid 
+		// http://www.asciitable.com/
+		// 'A' has an integer value of 65
+		TypeOfTriangle triangle = new TypeOfTriangle(5, 6, 'A');
+
+		assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
 	}
 	
 	@Test
@@ -144,8 +150,12 @@ public class TestTypeOfTriangle {
 	@Test
 	public void TestHES3()
 	{
-		TypeOfTriangle triangle = new TypeOfTriangle(a, 4, $);
+		// again technically this is valid 
+		// http://www.asciitable.com/
+		// 'a' has an integer value of 97
+		// '$' has an integer value of 36
+		TypeOfTriangle triangle = new TypeOfTriangle('a', 4, '$');
 		
-		//Code Needed
+		assertEquals( TriangleTypes.SCALENE, triangle.GetTypeOfTriangle());
 	}
 }
