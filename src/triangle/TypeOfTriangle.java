@@ -11,6 +11,8 @@ public class TypeOfTriangle {
 		EQUILATERAL
 	}
 	
+	private static final double m_epsilon = 0.01;
+	
 	private double m_dSideA = 0;
 	private double m_dSideB = 0;
 	private double m_dSideC = 0;
@@ -99,7 +101,9 @@ public class TypeOfTriangle {
 		double b_sqrt = Math.pow( m_dSideB, 2 );
 		double c_sqrt = Math.pow( m_dSideC, 2 );
 		
-		if( c_sqrt == ( a_sqrt + b_sqrt ) )
+		if( CompareDouble( a_sqrt, ( b_sqrt + c_sqrt ) ) ||
+			CompareDouble( b_sqrt, ( a_sqrt + c_sqrt ) ) ||
+			CompareDouble( c_sqrt, ( a_sqrt + b_sqrt ) ) )
 		{
 			m_bIsRight = true;
 		}
@@ -107,5 +111,10 @@ public class TypeOfTriangle {
 		{
 			m_bIsRight =  false;
 		}
+	}
+	
+	private boolean CompareDouble( double a, double b )
+	{
+		return ( a == b ? true : Math.abs(a - b) < m_epsilon );
 	}
 }
