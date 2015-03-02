@@ -43,28 +43,37 @@ public class TypeOfTriangle {
 	
 	public String GetTypeOfTriangleAsString()
 	{
+		String ret = "";
+		
 		switch( GetTypeOfTriangle() )
 		{
 			case EQUILATERAL:
-				return "Equilateral";
+				ret = "Equilateral";
+				break;
 				
 			case SCALENE:
-				return "Scalene";
+				ret = "Scalene";
+				break;
 				
 			case ISOSCELES:
-				return "Isosceles";
+				ret = "Isosceles";
+				break;
 				
+			case NONE:
 			default:
-				return "None";
+				ret = "None";
+				break;
 		}
+		
+		return ret;
 	}
 	
 	private void CalculateTriangleType()
 	{
 		
 		if( ( m_dSideA <= 0 ) || 
-				 ( m_dSideB <= 0 ) ||	
-				 ( m_dSideC <= 0 ) )
+			( m_dSideB <= 0 ) ||	
+			( m_dSideC <= 0 ) )
 		{
 			m_ttTriangleType = TriangleTypes.NONE;
 			return;

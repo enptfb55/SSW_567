@@ -15,6 +15,8 @@ public class TestTypeOfTriangle {
 	    TypeOfTriangle triangle = new TypeOfTriangle(3, 4, 0);
 
 	    assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+	    
+	    assertEquals( "None", triangle.GetTypeOfTriangleAsString() );
 	}
 
 	@Test //Assignment 2 Test
@@ -23,6 +25,8 @@ public class TestTypeOfTriangle {
 	    TypeOfTriangle triangle = new TypeOfTriangle(3, 4, -5);
 
 	    assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+	    
+	    assertEquals( "None", triangle.GetTypeOfTriangleAsString() );
 	}
 	
 	@Test //Assignment 2 Test
@@ -40,6 +44,8 @@ public class TestTypeOfTriangle {
 	    TypeOfTriangle triangle = new TypeOfTriangle(3, 4, ( 2147483647 + 1 ) );
 
 	    assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+	    
+	    assertEquals( "None", triangle.GetTypeOfTriangleAsString() );
 	}
 	
 	@Test
@@ -51,6 +57,8 @@ public class TestTypeOfTriangle {
 		
 		assertEquals( TriangleTypes.ISOSCELES, triangle.GetTypeOfTriangle() );
 		
+		assertEquals( "Isosceles", triangle.GetTypeOfTriangleAsString() );
+		
 	}
 	
 	@Test
@@ -61,6 +69,8 @@ public class TestTypeOfTriangle {
 		assertTrue( triangle.IsRight() );
 		
 		assertEquals( TriangleTypes.ISOSCELES, triangle.GetTypeOfTriangle() );
+		
+		assertEquals( "Isosceles", triangle.GetTypeOfTriangleAsString() );
 	}
 
 	@Test
@@ -71,6 +81,8 @@ public class TestTypeOfTriangle {
 		assertFalse( triangle.IsRight() );
 		
 		assertEquals( TriangleTypes.EQUILATERAL, triangle.GetTypeOfTriangle() );
+		
+		assertEquals( "Equilateral", triangle.GetTypeOfTriangleAsString() );
 		
 	}
 	
@@ -83,6 +95,8 @@ public class TestTypeOfTriangle {
 		
 		assertEquals( TriangleTypes.SCALENE, triangle.GetTypeOfTriangle() );
 		
+		assertEquals( "Scalene", triangle.GetTypeOfTriangleAsString() );
+		
 	}
 
 	@Test
@@ -93,6 +107,8 @@ public class TestTypeOfTriangle {
 		assertTrue( triangle.IsRight() );
 		
 		assertEquals( TriangleTypes.SCALENE, triangle.GetTypeOfTriangle() );
+		
+		assertEquals( "Scalene", triangle.GetTypeOfTriangleAsString() );
 		
 	}
 	
@@ -116,6 +132,8 @@ public class TestTypeOfTriangle {
 		
 		assertEquals( TriangleTypes.ISOSCELES, triangle.GetTypeOfTriangle() );
 		
+		assertEquals( "Isosceles", triangle.GetTypeOfTriangleAsString() );
+		
 	}
 	
 	@Test
@@ -126,6 +144,8 @@ public class TestTypeOfTriangle {
 		assertTrue( triangle.IsRight() );
 		
 		assertEquals( TriangleTypes.SCALENE, triangle.GetTypeOfTriangle() );
+		
+		assertEquals( "Scalene", triangle.GetTypeOfTriangleAsString() );
 		
 	}
 	
@@ -138,6 +158,8 @@ public class TestTypeOfTriangle {
 		TypeOfTriangle triangle = new TypeOfTriangle(5, 6, 'A');
 
 		assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+		
+		assertEquals( "None", triangle.GetTypeOfTriangleAsString() );
 	}
 	
 	@Test
@@ -146,6 +168,8 @@ public class TestTypeOfTriangle {
 		TypeOfTriangle triangle = new TypeOfTriangle(1, 2, 3);
 		
 		assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+		
+		assertEquals( "None", triangle.GetTypeOfTriangleAsString() );
 	}
 	
 	//Team 5 Tests
@@ -156,6 +180,8 @@ public class TestTypeOfTriangle {
 		TypeOfTriangle triangle = new TypeOfTriangle(0, 1, 1);
 		
 		assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+		
+		assertEquals( "None", triangle.GetTypeOfTriangleAsString() );
 	}
 	
 	@Test
@@ -166,6 +192,8 @@ public class TestTypeOfTriangle {
 		assertTrue( triangle.IsRight() );
 		
 		assertEquals( TriangleTypes.SCALENE, triangle.GetTypeOfTriangle() );
+		
+		assertEquals( "Scalene", triangle.GetTypeOfTriangleAsString() );
 	}
 	
 	@Test
@@ -178,5 +206,7 @@ public class TestTypeOfTriangle {
 		TypeOfTriangle triangle = new TypeOfTriangle('a', 4, '$');
 		
 		assertEquals( TriangleTypes.NONE, triangle.GetTypeOfTriangle());
+		
+		assertEquals( "None", triangle.GetTypeOfTriangleAsString() );
 	}
 }
